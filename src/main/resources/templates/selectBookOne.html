@@ -9,5 +9,9 @@
 	<p th:text="'도서 이름 : '+${book.bookname} "></p>
 	<p th:text="'도서 가격 : '+${book.price} "></p>
 	<p th:text="'출판사 : '+${book.publisher} "></p>
+	<a
+		th:href="@{/updateBookForm(bookid=${book.bookid})}"
+		th:text="'책아이디'+${book.bookid}+'수정 !!'">
+	</a>
 </body>
 </html>

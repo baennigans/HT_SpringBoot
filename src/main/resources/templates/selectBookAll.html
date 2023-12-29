@@ -6,6 +6,14 @@
 </head>
 <body>
 	<h1 align="center">전체 도서 조회</h1>
+	
+	<p align="right">
+		<a
+			th:href="@{/loginForm}"
+			th:text="'로그인 화면이동!!'">
+		</a>
+	</p>
+	
 	<table align="center" border="1">
 		<tr>
 			<th width="150">
@@ -14,19 +22,32 @@
 			<th width="150">
 				이름
 			</th>
-			<th width="150">
-				출판사
-			</th>
-			<th width="150">
-				가격
-			</th>
 		</tr>
 		<tr th:each="book : ${allBook}">
-			<td th:text="${book.bookid}"></td>
-			<td th:text="${book.bookname}"></td>
-			<td th:text="${book.publisher}"></td>
-			<td th:text="${book.price}"></td>
+			<td>
+				<a
+					th:href="@{/selectBook(bookid=${book.bookid})}"
+					th:text="'책아이디'+${book.bookid}+'조회 !!'">
+				</a>
+			</td>
+			<td th:text="${book.bookname}">
+			</td>
 		</tr>
 	</table>
+	
+	<p align="center">
+		<a
+			th:href="@{/insertBookForm}"
+			th:text="'책추가 화면이동!!'">
+		</a>
+	</p>
+	
+	<p align="center">
+		<a
+			th:href="@{/insertMemberForm}"
+			th:text="'회원추가 화면이동!!'">
+		</a>
+	</p>
+	
 </body>
 </html>

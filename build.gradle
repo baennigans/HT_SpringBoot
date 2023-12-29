@@ -36,6 +36,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.2.1'
 	// https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6
 	implementation 'com.oracle.database.jdbc:ojdbc6:11.2.0.4'
+	// https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto
+	implementation 'org.springframework.security:spring-security-crypto:6.0.3'
 }
 
 tasks.named('test') {

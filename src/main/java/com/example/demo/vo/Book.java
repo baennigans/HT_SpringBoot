@@ -12,7 +12,6 @@ public class Book {
 	private String publisher;
 	private String price;
 	
-	
 	public String getBookid() {
 		return bookid;
 	}
