@@ -104,10 +104,12 @@ public class BookController {
 		mav.setViewName("selectBookAll");
 		return mav;
 	}
+	
+	@RequestMapping(value="/deleteBookControl")
+	public ModelAndView deleteBook1(@RequestParam(value="bookid") String bid) {
+		jpaBook.deleteById(bid);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("forward:/");
+		return mav;
+	}
 }
-
-
-
-
-
-
