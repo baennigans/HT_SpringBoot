@@ -10,8 +10,20 @@
 	<p align="right">
 		<a
 			th:href="@{/loginForm}"
-			th:text="'로그인 화면이동!!'">
+			th:text="'로그인 화면이동!!'"
+			th:if="${session.login_member == null}">
 		</a>
+	</p>
+	
+	<p align="right"
+		th:if="${session.login_member != null}"
+		th:text="${session.login_member.name} +  '님 로그인 중...'">
+	</p>
+	
+	<p align="right">
+		<a th:href="@{logoutControl}"
+		th:text="'로그아웃 !!!'"
+		th:if="${session.login_member != null}"></a>
 	</p>
 	
 	<table align="center" border="1">
@@ -38,7 +50,8 @@
 	<p align="center">
 		<a
 			th:href="@{/insertBookForm}"
-			th:text="'책추가 화면이동!!'">
+			th:text="'책추가 화면이동!!'"
+			th:if="${session.login_member != null}">
 		</a>
 	</p>
 	
