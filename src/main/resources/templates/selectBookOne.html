@@ -11,7 +11,16 @@
 	<p th:text="'출판사 : '+${book.publisher} "></p>
 	<a
 		th:href="@{/updateBookForm(bookid=${book.bookid})}"
-		th:text="'책아이디'+${book.bookid}+'수정 !!'">
+		th:text="'책아이디'+${book.bookid}+'수정 !!'"
+		th:if="${session.login_member != null}">
 	</a>
+	
+	<p>
+		<a
+			th:href="@{/deleteBookControl(bookid=${book.bookid})}"
+			th:text="'책아이디'+${book.bookid}+'삭제!!'"
+			th:if="${session.login_member != null}">
+		</a>
+	</p>
 </body>
 </html>
